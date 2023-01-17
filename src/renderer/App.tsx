@@ -1,5 +1,5 @@
 import { MemoryRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MantineProvider, Tabs, TabsProps, ColorSchemeProvider, ColorScheme, Group, Text } from '@mantine/core';
 import { useColorScheme } from '@mantine/hooks';
 import AppShellPage from './AppShellPage';
@@ -16,7 +16,7 @@ const Hello = () => {
 const Canvas = () => {
   return (
     <ReactSplit minHeights={[100]} direction={SplitDirection.Vertical} initialSizes={[90, 10]} >
-        <DynamicTerrain />
+        <div id='map'></div>
         <div></div>
     </ReactSplit>
   )
